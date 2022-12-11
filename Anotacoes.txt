@@ -1,0 +1,16 @@
+Apache kafka para iniciantes Udemy
+
+https://www.udemy.com/course/apache-kafka-para-iniciantes/
+
+- Topico = fila de dados (tabela de um banco por exexmplo);
+- Partição (topico pode ter uma ou varias partições), cada mensagen é inserida em order dentro da partição,
+cada particao terá um identificador chamado offset = marcador,
+então o Kafka sabe qual a ultima mensagem entregue para cada um deles, pois cada msg vai ter o indentificador,
+o consumidor pode retroceder ou avançar entre as msgs;
+
+- Produtores: não se preocupam em relação a partição ou confirmação de escrita, caso saia do ar o producer irá armazenar em cache ate a volta 
+do Kafka, no caso do consulmer também sabera se recueperar caso saia do ar;
+- Grupos de consumo: conseguimos configurar consumidores distintos em um mesmo grupo para receber msgs distinhas, muito util para ler dados
+de forma paralela para escalar sua aplicação;
+ 
+ 
