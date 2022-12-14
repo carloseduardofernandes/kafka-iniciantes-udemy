@@ -13,4 +13,12 @@ do Kafka, no caso do consulmer também sabera se recueperar caso saia do ar;
 - Grupos de consumo: conseguimos configurar consumidores distintos em um mesmo grupo para receber msgs distinhas, muito util para ler dados
 de forma paralela para escalar sua aplicação;
  
- 
+
+*Porta Kafka Docker: 29092
+
+Criar o container Kafka pelo docker compose: na pasta do arquivo .yaml digite: docker-compose up -d  (-d para o console não ficar preso)
+
+Parar: docker-compose stop
+Startar: docker-compose start
+Para e Zerar: docker-compose down
+Listar topicos: kafka-topics --bootstrap-server localhost:9092 --create --topic teste --partitions 1 --replication-factor 1
