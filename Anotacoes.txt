@@ -13,12 +13,16 @@ do Kafka, no caso do consulmer também sabera se recueperar caso saia do ar;
 - Grupos de consumo: conseguimos configurar consumidores distintos em um mesmo grupo para receber msgs distinhas, muito util para ler dados
 de forma paralela para escalar sua aplicação;
  
-
+*zookeeper = ferramenta usado pelo Kafka para armazenar chaves e valores;
 *Porta Kafka Docker: 29092
+* https://learn.microsoft.com/pt-br/windows/wsl/install-manual
 
 Criar o container Kafka pelo docker compose: na pasta do arquivo .yaml digite: docker-compose up -d  (-d para o console não ficar preso)
 
-Parar: docker-compose stop
-Startar: docker-compose start
-Para e Zerar: docker-compose down
-Listar topicos: kafka-topics --bootstrap-server localhost:9092 --create --topic teste --partitions 1 --replication-factor 1
+Parar Kafka: docker-compose stop
+Startar Kafka: docker-compose start
+Para e zerar os dados Kafka: docker-compose down
+Cria um topico chamado teste: kafka-topics --bootstrap-server localhost:29092 --create --topic teste --partitions 1 --replication-factor 1
+Lista topicos: kafka-topics --bootstrap-server localhost:29092 --list
+Mandar msg para um topico via cmd: kafka-console-producer --broker-list localhost:29092 --topic teste
+Consome msgs de um topico desde o início: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --from-beginning 
