@@ -26,3 +26,7 @@ Cria um topico chamado teste: kafka-topics --bootstrap-server localhost:29092 --
 Lista topicos: kafka-topics --bootstrap-server localhost:29092 --list
 Mandar msg para um topico via cmd: kafka-console-producer --broker-list localhost:29092 --topic teste
 Consome msgs de um topico desde o início: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --from-beginning 
+Consome msgs de um topico usando grupos: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --group grupo1
+Detalha os dados do topico: kafka-topics --bootstrap-server localhost:29092 --topic teste --describe
+Adicionar particições ao topico: kafka-topics --alter --bootstrap-server localhost:29092 --topic teste --partitions 10
+Excluir topico: kafka-topics --bootstrap-server localhost:29092 --topic teste --delete
