@@ -24,9 +24,11 @@ Startar Kafka: docker-compose start
 Para e zerar os dados Kafka: docker-compose down
 Cria um topico chamado teste: kafka-topics --bootstrap-server localhost:29092 --create --topic teste --partitions 1 --replication-factor 1
 Lista topicos: kafka-topics --bootstrap-server localhost:29092 --list
-Mandar msg para um topico via cmd: kafka-console-producer --broker-list localhost:29092 --topic teste
+Mandar msg para um topico: kafka-console-producer --broker-list localhost:29092 --topic teste
 Consome msgs de um topico desde o início: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --from-beginning 
 Consome msgs de um topico usando grupos: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --group grupo1
 Detalha os dados do topico: kafka-topics --bootstrap-server localhost:29092 --topic teste --describe
 Adicionar particições ao topico: kafka-topics --alter --bootstrap-server localhost:29092 --topic teste --partitions 10
 Excluir topico: kafka-topics --bootstrap-server localhost:29092 --topic teste --delete
+Mandar msg para um topico com chave-valor: kafka-console-producer --broker-list localhost:29092 --topic teste --property "parse.key=true" --property "key.separator=,"
+Consome msgs de um topico com chave-valor: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --property "parse.key=true" --property "key.separator=,"
