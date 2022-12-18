@@ -31,4 +31,10 @@ Detalha os dados do topico: kafka-topics --bootstrap-server localhost:29092 --to
 Adicionar particições ao topico: kafka-topics --alter --bootstrap-server localhost:29092 --topic teste --partitions 10
 Excluir topico: kafka-topics --bootstrap-server localhost:29092 --topic teste --delete
 Mandar msg para um topico com chave-valor: kafka-console-producer --broker-list localhost:29092 --topic teste --property "parse.key=true" --property "key.separator=,"
-Consome msgs de um topico com chave-valor: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --property "parse.key=true" --property "key.separator=,"
+Consome msgs de um topico com chave-valor: kafka-console-consumer --bootstrap-server localhost:29092 --topic teste --property "parse.key=true" --property "key.separator=," --group grupo1
+Replicas para megs(caso cai pode consumir as mensagens):
+
+*Conduktor (ferranenta para monitorar Broker Kafka)
+
+
+

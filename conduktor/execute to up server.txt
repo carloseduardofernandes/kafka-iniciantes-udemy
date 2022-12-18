@@ -1,0 +1,6 @@
+*Start Docker and run above coman
+docker run --rm `
+  -p "8080:8080" --pull=always `
+  --mount "type=bind,source=$pwd/platform-config.yaml,target=/opt/conduktor/default-platform-config.yaml" `
+  --mount "source=conduktor_data,target=/var/conduktor" `
+conduktor/conduktor-platform:latest
